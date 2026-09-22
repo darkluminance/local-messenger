@@ -1,0 +1,27 @@
+name: local_messenger
+description: A peer-to-peer direct messenger for devices on the same LAN.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.13.4 <3.14.0'
+  flutter: 3.47.5
+
+dependencies:
+  bonsoir: 7.1.5
+  drift: 2.32.0
+  flutter:
+    sdk: flutter
+  flutter_foreground_task: 11.0.3
+  sodium: 4.1.0+1
+  sqlite3: 3.6.0
+
+dev_dependencies:
+  build_runner: 2.10.5
+  drift_dev: 2.32.0
+  flutter_lints: 6.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
