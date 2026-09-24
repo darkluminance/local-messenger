@@ -4,7 +4,9 @@ Status: Phase 0 design baseline. Wire compatibility is not implemented until Pha
 
 ## Discovery and addressing
 
-Peers advertise `_localmsg._tcp` on the local multicast domain. The default port is `45873`, with a test-only override. TXT keys are limited to protocol version (`v`), device ID (`id`), capabilities (`caps`), and profile revision (`profile`). Display names from DNS-SD are never trusted.
+Peers advertise `_localmsg._tcp` on the local multicast domain. The default port is `45873`, with a test-only override. Required TXT keys are protocol version (`v`), device ID (`id`), capabilities (`caps`), and profile revision (`profile`). An optional `name` hint is a nonblank display name of at most 64 UTF-8 bytes. Invalid name hints are ignored without discarding valid presence; unknown TXT keys remain rejected. The name is plaintext to observers on the LAN and can be spoofed. It is presentation only, never an input to identity, pinning, or session selection. The authenticated Phase 3 profile supersedes it.
+
+Current Phase 2 builds that enforce exactly four TXT keys reject the new five-key advertisement. Update both test installations together; this pre-release extension does not provide mixed-build discovery compatibility.
 
 Resolved IP addresses are connection candidates. Implementations must support IPv4 and IPv6, preserve IPv6 scope identifiers, deduplicate by authenticated device ID, and never depend on `.local` hostname resolution.
 
