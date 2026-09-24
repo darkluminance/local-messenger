@@ -9,10 +9,14 @@ environment:
 
 dependencies:
   bonsoir: 7.1.5
+  crypto: 3.0.7
   drift: 2.32.0
   flutter:
     sdk: flutter
   flutter_foreground_task: 11.0.3
+  flutter_secure_storage: 11.2.0
+  path: 1.9.1
+  path_provider: 2.1.6
   sodium: 4.1.0+1
   sqlite3: 3.6.0
 

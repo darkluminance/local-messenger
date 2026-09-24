@@ -1,0 +1,796 @@
+{
+  "_meta": {
+    "description": "This file contains a serialized version of schema entities for drift.",
+    "version": "1.3.0"
+  },
+  "options": {
+    "store_date_time_values_as_text": false
+  },
+  "entities": [
+    {
+      "id": 0,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "local_profiles",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "singleton",
+            "getter_name": "singleton",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": "const CustomExpression('1')",
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "device_id",
+            "getter_name": "deviceId",
+            "moor_type": "blob",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "public_key",
+            "getter_name": "publicKey",
+            "moor_type": "blob",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "display_name",
+            "getter_name": "displayName",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "revision",
+            "getter_name": "revision",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "created_at_micros",
+            "getter_name": "createdAtMicros",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "updated_at_micros",
+            "getter_name": "updatedAtMicros",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [
+          "CHECK (singleton = 1)"
+        ],
+        "explicit_pk": [
+          "singleton"
+        ]
+      }
+    },
+    {
+      "id": 1,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "pinned_peers",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "device_id",
+            "getter_name": "deviceId",
+            "moor_type": "blob",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "public_key",
+            "getter_name": "publicKey",
+            "moor_type": "blob",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "display_name",
+            "getter_name": "displayName",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "profile_revision",
+            "getter_name": "profileRevision",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "profile_created_at_micros",
+            "getter_name": "profileCreatedAtMicros",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "profile_updated_at_micros",
+            "getter_name": "profileUpdatedAtMicros",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "pinned_at_micros",
+            "getter_name": "pinnedAtMicros",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "last_verified_at_micros",
+            "getter_name": "lastVerifiedAtMicros",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "trust_state",
+            "getter_name": "trustState",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [],
+        "explicit_pk": [
+          "device_id"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "references": [],
+      "type": "table",
+      "data": {
+        "name": "conversations",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "conversation_id",
+            "getter_name": "conversationId",
+            "moor_type": "blob",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "first_participant_id",
+            "getter_name": "firstParticipantId",
+            "moor_type": "blob",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "second_participant_id",
+            "getter_name": "secondParticipantId",
+            "moor_type": "blob",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "created_at_micros",
+            "getter_name": "createdAtMicros",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [],
+        "explicit_pk": [
+          "conversation_id"
+        ],
+        "unique_keys": [
+          [
+            "first_participant_id",
+            "second_participant_id"
+          ]
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "references": [
+        2
+      ],
+      "type": "table",
+      "data": {
+        "name": "operations",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "operation_id",
+            "getter_name": "operationId",
+            "moor_type": "blob",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "protocol_version",
+            "getter_name": "protocolVersion",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "conversation_id",
+            "getter_name": "conversationId",
+            "moor_type": "blob",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "author_device_id",
+            "getter_name": "authorDeviceId",
+            "moor_type": "blob",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "recipient_device_id",
+            "getter_name": "recipientDeviceId",
+            "moor_type": "blob",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "author_sequence",
+            "getter_name": "authorSequence",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "previous_operation_id",
+            "getter_name": "previousOperationId",
+            "moor_type": "blob",
+            "nullable": true,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "authored_at_micros",
+            "getter_name": "authoredAtMicros",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "message_text",
+            "getter_name": "messageText",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "signature",
+            "getter_name": "signature",
+            "moor_type": "blob",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "canonical_bytes",
+            "getter_name": "canonicalBytes",
+            "moor_type": "blob",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "received_at_micros",
+            "getter_name": "receivedAtMicros",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [
+          "FOREIGN KEY (conversation_id) REFERENCES conversations(conversation_id) ON DELETE CASCADE"
+        ],
+        "explicit_pk": [
+          "operation_id"
+        ],
+        "unique_keys": [
+          [
+            "conversation_id",
+            "author_device_id",
+            "author_sequence"
+          ]
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "references": [
+        2
+      ],
+      "type": "table",
+      "data": {
+        "name": "feed_heads",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "conversation_id",
+            "getter_name": "conversationId",
+            "moor_type": "blob",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "author_device_id",
+            "getter_name": "authorDeviceId",
+            "moor_type": "blob",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "head_sequence",
+            "getter_name": "headSequence",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "head_operation_id",
+            "getter_name": "headOperationId",
+            "moor_type": "blob",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "is_quarantined",
+            "getter_name": "isQuarantined",
+            "moor_type": "bool",
+            "nullable": false,
+            "customConstraints": null,
+            "defaultConstraints": "CHECK (\"is_quarantined\" IN (0, 1))",
+            "dialectAwareDefaultConstraints": {
+              "sqlite": "CHECK (\"is_quarantined\" IN (0, 1))"
+            },
+            "default_dart": "const CustomExpression('0')",
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [
+          "FOREIGN KEY (conversation_id) REFERENCES conversations(conversation_id) ON DELETE CASCADE"
+        ],
+        "explicit_pk": [
+          "conversation_id",
+          "author_device_id"
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "references": [
+        3,
+        2
+      ],
+      "type": "table",
+      "data": {
+        "name": "message_projections",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "operation_id",
+            "getter_name": "operationId",
+            "moor_type": "blob",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "conversation_id",
+            "getter_name": "conversationId",
+            "moor_type": "blob",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "author_device_id",
+            "getter_name": "authorDeviceId",
+            "moor_type": "blob",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "recipient_device_id",
+            "getter_name": "recipientDeviceId",
+            "moor_type": "blob",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "author_sequence",
+            "getter_name": "authorSequence",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "authored_at_micros",
+            "getter_name": "authoredAtMicros",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "message_text",
+            "getter_name": "messageText",
+            "moor_type": "string",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "inserted_at_micros",
+            "getter_name": "insertedAtMicros",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [
+          "FOREIGN KEY (operation_id) REFERENCES operations(operation_id) ON DELETE CASCADE",
+          "FOREIGN KEY (conversation_id) REFERENCES conversations(conversation_id) ON DELETE CASCADE"
+        ],
+        "explicit_pk": [
+          "operation_id"
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "references": [
+        2
+      ],
+      "type": "table",
+      "data": {
+        "name": "retention_floors",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "conversation_id",
+            "getter_name": "conversationId",
+            "moor_type": "blob",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "author_device_id",
+            "getter_name": "authorDeviceId",
+            "moor_type": "blob",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "retained_through_sequence",
+            "getter_name": "retainedThroughSequence",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [
+          "FOREIGN KEY (conversation_id) REFERENCES conversations(conversation_id) ON DELETE CASCADE"
+        ],
+        "explicit_pk": [
+          "conversation_id",
+          "author_device_id"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "references": [
+        2
+      ],
+      "type": "table",
+      "data": {
+        "name": "delivery_acknowledgements",
+        "was_declared_in_moor": false,
+        "columns": [
+          {
+            "name": "conversation_id",
+            "getter_name": "conversationId",
+            "moor_type": "blob",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "author_device_id",
+            "getter_name": "authorDeviceId",
+            "moor_type": "blob",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "recipient_device_id",
+            "getter_name": "recipientDeviceId",
+            "moor_type": "blob",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "highest_sequence",
+            "getter_name": "highestSequence",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          },
+          {
+            "name": "updated_at_micros",
+            "getter_name": "updatedAtMicros",
+            "moor_type": "int",
+            "nullable": false,
+            "customConstraints": null,
+            "default_dart": null,
+            "default_client_dart": null,
+            "dsl_features": []
+          }
+        ],
+        "is_virtual": false,
+        "without_rowid": false,
+        "constraints": [
+          "FOREIGN KEY (conversation_id) REFERENCES conversations(conversation_id) ON DELETE CASCADE"
+        ],
+        "explicit_pk": [
+          "conversation_id",
+          "author_device_id",
+          "recipient_device_id"
+        ]
+      }
+    }
+  ],
+  "fixed_sql": [
+    {
+      "name": "local_profiles",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"local_profiles\" (\"singleton\" INTEGER NOT NULL DEFAULT 1, \"device_id\" BLOB NOT NULL, \"public_key\" BLOB NOT NULL, \"display_name\" TEXT NOT NULL, \"revision\" INTEGER NOT NULL, \"created_at_micros\" INTEGER NOT NULL, \"updated_at_micros\" INTEGER NOT NULL, PRIMARY KEY (\"singleton\"), CHECK (singleton = 1));"
+        }
+      ]
+    },
+    {
+      "name": "pinned_peers",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"pinned_peers\" (\"device_id\" BLOB NOT NULL, \"public_key\" BLOB NOT NULL, \"display_name\" TEXT NOT NULL, \"profile_revision\" INTEGER NOT NULL, \"profile_created_at_micros\" INTEGER NOT NULL, \"profile_updated_at_micros\" INTEGER NOT NULL, \"pinned_at_micros\" INTEGER NOT NULL, \"last_verified_at_micros\" INTEGER NOT NULL, \"trust_state\" TEXT NOT NULL, PRIMARY KEY (\"device_id\"));"
+        }
+      ]
+    },
+    {
+      "name": "conversations",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"conversations\" (\"conversation_id\" BLOB NOT NULL, \"first_participant_id\" BLOB NOT NULL, \"second_participant_id\" BLOB NOT NULL, \"created_at_micros\" INTEGER NOT NULL, PRIMARY KEY (\"conversation_id\"), UNIQUE (\"first_participant_id\", \"second_participant_id\"));"
+        }
+      ]
+    },
+    {
+      "name": "operations",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"operations\" (\"operation_id\" BLOB NOT NULL, \"protocol_version\" INTEGER NOT NULL, \"conversation_id\" BLOB NOT NULL, \"author_device_id\" BLOB NOT NULL, \"recipient_device_id\" BLOB NOT NULL, \"author_sequence\" INTEGER NOT NULL, \"previous_operation_id\" BLOB NULL, \"authored_at_micros\" INTEGER NOT NULL, \"message_text\" TEXT NOT NULL, \"signature\" BLOB NOT NULL, \"canonical_bytes\" BLOB NOT NULL, \"received_at_micros\" INTEGER NOT NULL, PRIMARY KEY (\"operation_id\"), UNIQUE (\"conversation_id\", \"author_device_id\", \"author_sequence\"), FOREIGN KEY (conversation_id) REFERENCES conversations(conversation_id) ON DELETE CASCADE);"
+        }
+      ]
+    },
+    {
+      "name": "feed_heads",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"feed_heads\" (\"conversation_id\" BLOB NOT NULL, \"author_device_id\" BLOB NOT NULL, \"head_sequence\" INTEGER NOT NULL, \"head_operation_id\" BLOB NOT NULL, \"is_quarantined\" INTEGER NOT NULL DEFAULT 0 CHECK (\"is_quarantined\" IN (0, 1)), PRIMARY KEY (\"conversation_id\", \"author_device_id\"), FOREIGN KEY (conversation_id) REFERENCES conversations(conversation_id) ON DELETE CASCADE);"
+        }
+      ]
+    },
+    {
+      "name": "message_projections",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"message_projections\" (\"operation_id\" BLOB NOT NULL, \"conversation_id\" BLOB NOT NULL, \"author_device_id\" BLOB NOT NULL, \"recipient_device_id\" BLOB NOT NULL, \"author_sequence\" INTEGER NOT NULL, \"authored_at_micros\" INTEGER NOT NULL, \"message_text\" TEXT NOT NULL, \"inserted_at_micros\" INTEGER NOT NULL, PRIMARY KEY (\"operation_id\"), FOREIGN KEY (operation_id) REFERENCES operations(operation_id) ON DELETE CASCADE, FOREIGN KEY (conversation_id) REFERENCES conversations(conversation_id) ON DELETE CASCADE);"
+        }
+      ]
+    },
+    {
+      "name": "retention_floors",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"retention_floors\" (\"conversation_id\" BLOB NOT NULL, \"author_device_id\" BLOB NOT NULL, \"retained_through_sequence\" INTEGER NOT NULL, PRIMARY KEY (\"conversation_id\", \"author_device_id\"), FOREIGN KEY (conversation_id) REFERENCES conversations(conversation_id) ON DELETE CASCADE);"
+        }
+      ]
+    },
+    {
+      "name": "delivery_acknowledgements",
+      "sql": [
+        {
+          "dialect": "sqlite",
+          "sql": "CREATE TABLE IF NOT EXISTS \"delivery_acknowledgements\" (\"conversation_id\" BLOB NOT NULL, \"author_device_id\" BLOB NOT NULL, \"recipient_device_id\" BLOB NOT NULL, \"highest_sequence\" INTEGER NOT NULL, \"updated_at_micros\" INTEGER NOT NULL, PRIMARY KEY (\"conversation_id\", \"author_device_id\", \"recipient_device_id\"), FOREIGN KEY (conversation_id) REFERENCES conversations(conversation_id) ON DELETE CASCADE);"
+        }
+      ]
+    }
+  ]
+}

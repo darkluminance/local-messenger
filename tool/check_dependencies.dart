@@ -4,10 +4,14 @@ import 'dart:io';
 const directPackages = <String>{
   'bonsoir',
   'build_runner',
+  'crypto',
   'drift',
   'drift_dev',
   'flutter_foreground_task',
   'flutter_lints',
+  'flutter_secure_storage',
+  'path',
+  'path_provider',
   'sodium',
   'sqlite3',
 };
@@ -16,6 +20,7 @@ const expectedLicenseMarkers = <String, String>{
   'bonsoir': 'MIT License',
   'drift': 'MIT License',
   'flutter_foreground_task': 'MIT License',
+  'flutter_secure_storage': 'BSD 3-Clause License',
   'sodium': 'BSD 3-Clause License',
   'sqlite3': 'MIT License',
 };
@@ -106,9 +111,24 @@ void main() {
     }
   }
 
+  for (final federatedPackage in <String>{
+    'flutter_secure_storage_darwin',
+    'flutter_secure_storage_linux',
+    'flutter_secure_storage_windows',
+    'path_provider_android',
+    'path_provider_foundation',
+    'path_provider_linux',
+    'path_provider_windows',
+  }) {
+    if (!lockfile.contains('  $federatedPackage:')) {
+      stderr.writeln('Missing platform implementation: $federatedPackage');
+      exitCode = 1;
+    }
+  }
+
   if (exitCode == 0) {
     stdout.writeln(
-      'Dependency licenses and Bonsoir platform packages verified.',
+      'Dependency licenses and selected platform packages verified.',
     );
   }
 }
